@@ -1,4 +1,6 @@
-﻿namespace Booleans_And_Conditions_Practice
+﻿using System;
+
+namespace Booleans_And_Conditions_Practice
 /*
  Kady Tran
 04/24/2024
@@ -9,8 +11,6 @@
     {
         static void Main(string[] args)
         {
-
-
             Menu();
 
         } // End of main
@@ -64,8 +64,18 @@
             Console.WriteLine("Part 2");
 
             // Prompts the user to enter an integer
-            Console.Write("Please enter a whole number: ");
-            int userNumber = int.Parse(Console.ReadLine());
+            int userNumber = 0;
+            try
+            {
+                Console.Write("Please enter a whole number: ");
+                string userNumberInput = Console.ReadLine();
+                userNumber = int.Parse(userNumberInput);
+            }
+            catch
+            {
+                Console.WriteLine("Your whole number was invalid.");
+            }
+
 
             // Using a conditional statement to determine whether the number is odd or even by dividing the userNumber by 2 and seeing if it has any remainder, if it doesn't have a remainder, it's even, and if it does then it's odd.
             if (userNumber % 2 == 0)
@@ -83,9 +93,20 @@
         {
             Console.WriteLine("Part 3");
 
+            int userYear = 0;
+
             // Prompt the user to enter a year.
-            Console.Write("Please enter a year: ");
-            int userYear = int.Parse(Console.ReadLine());
+
+            try
+            {
+                Console.Write("Please enter a year: ");
+                string userYearInput = Console.ReadLine();
+                userYear = int.Parse(userYearInput);
+            }
+            catch
+            {
+                Console.WriteLine("Your year was invalid.");
+            }
 
             // If statement with the following criteria to determine whether the year is a leap year:
             // A year is a leap year if it is divisible by 4, except for years that are divisible by 100.
